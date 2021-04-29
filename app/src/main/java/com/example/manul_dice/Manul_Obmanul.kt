@@ -119,6 +119,7 @@ class Manul_Obmanul : AppCompatActivity() {
 
 
 
+
                 for (i in 1..4) {
 
 
