@@ -118,6 +118,7 @@ class Manul_Obmanul : AppCompatActivity() {
                 var end_rotation_cycle2 = 179
 
 
+
                 for (i in 1..4) {
 
 
