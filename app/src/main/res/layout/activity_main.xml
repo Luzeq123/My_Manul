@@ -49,17 +49,20 @@
             <ImageView
                 android:id="@+id/iv_one"
                 style="@style/View_Grid"
-                app:srcCompat="@drawable/one" />
+                app:srcCompat="@drawable/one"
+                android:onClick="playSound18"/>
 
             <ImageView
                 android:id="@+id/iv_two"
                 style="@style/View_Grid"
-                app:srcCompat="@drawable/two" />
+                app:srcCompat="@drawable/two"
+                android:onClick="playSound16"/>
 
             <ImageView
                 android:id="@+id/iv_three"
                 style="@style/View_Grid"
-                app:srcCompat="@drawable/three" />
+                app:srcCompat="@drawable/three"
+                android:onClick="playSound13"/>
         </LinearLayout>
 
         <LinearLayout
