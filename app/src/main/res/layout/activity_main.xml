@@ -32,10 +32,11 @@
         app:layout_constraintVertical_bias="0.8"></ImageView>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="260dp"
-        android:orientation="vertical"
 
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -49,20 +50,20 @@
             <ImageView
                 android:id="@+id/iv_one"
                 style="@style/View_Grid"
-                app:srcCompat="@drawable/one"
-                android:onClick="playSound18"/>
+                android:onClick="playSound18"
+                app:srcCompat="@drawable/one" />
 
             <ImageView
                 android:id="@+id/iv_two"
                 style="@style/View_Grid"
-                app:srcCompat="@drawable/two"
-                android:onClick="playSound16"/>
+                android:onClick="playSound16"
+                app:srcCompat="@drawable/two" />
 
             <ImageView
                 android:id="@+id/iv_three"
                 style="@style/View_Grid"
-                app:srcCompat="@drawable/three"
-                android:onClick="playSound13"/>
+                android:onClick="playSound13"
+                app:srcCompat="@drawable/three" />
         </LinearLayout>
 
         <LinearLayout
@@ -86,6 +87,65 @@
                 style="@style/View_Grid"
                 app:srcCompat="@drawable/six" />
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:layout_editor_absoluteX="1dp">
+
+        <ImageView
+            android:id="@+id/iv_do"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/notekey" />
+
+        <ImageView
+            android:id="@+id/iv_re"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/notekey" />
+
+        <ImageView
+            android:id="@+id/iv_mi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/notekey" />
+
+        <ImageView
+            android:id="@+id/iv_fa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/notekey" />
+
+        <ImageView
+            android:id="@+id/iv_sol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/notekey" />
+
+        <ImageView
+            android:id="@+id/iv_la"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/notekey" />
+
+        <ImageView
+            android:id="@+id/iv_si"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/notekey" />
+
+
     </LinearLayout>
 
 

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -33,9 +34,9 @@ class Manul_Obmanul : AppCompatActivity() {
     private var soundId16 = 0
     private var soundId17 = 0
     private var soundId18 = 0
-    private var left_volume = 1F
-    private var right_volume = 1F
-    private var sound_priority_globall = 1
+    private var leftVolume = 1F
+    private var rightVolume = 1F
+    private var soundPriorityGlobal = 1
 
     fun playSound(sound: Int) {
         var soundIdBuffer = 0
@@ -59,7 +60,7 @@ class Manul_Obmanul : AppCompatActivity() {
             17 -> soundIdBuffer = soundId17//openh
             18 -> soundIdBuffer = soundId18//bochka
         }
-        soundPool?.play(soundIdBuffer, left_volume, right_volume, 0, 0, 1F)
+        soundPool?.play(soundIdBuffer, leftVolume, rightVolume, 0, 0, 1F)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,36 +68,40 @@ class Manul_Obmanul : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         soundPool = SoundPool(25, AudioManager.STREAM_MUSIC, 0)
-        soundId1 = soundPool!!.load(baseContext, R.raw.one, sound_priority_globall)
-        soundId2 = soundPool!!.load(baseContext, R.raw.two, sound_priority_globall)
-        soundId3 = soundPool!!.load(baseContext, R.raw.three, sound_priority_globall)
-        soundId4 = soundPool!!.load(baseContext, R.raw.four, sound_priority_globall)
-        soundId5 = soundPool!!.load(baseContext, R.raw.five, sound_priority_globall)
-        soundId6 = soundPool!!.load(baseContext, R.raw.six, sound_priority_globall)
-        soundId7 = soundPool!!.load(baseContext, R.raw.seven, sound_priority_globall)
-        soundId8 = soundPool!!.load(baseContext, R.raw.eight, sound_priority_globall)
-        soundId9 = soundPool!!.load(baseContext, R.raw.nine, sound_priority_globall)
-        soundId10 = soundPool!!.load(baseContext, R.raw.ten, sound_priority_globall)
-        soundId11 = soundPool!!.load(baseContext, R.raw.eleven, sound_priority_globall)
-        soundId12 = soundPool!!.load(baseContext, R.raw.twelve, sound_priority_globall)
-
-        soundId13 = soundPool!!.load(baseContext, R.raw.rabochiy, sound_priority_globall)
-        soundId14 = soundPool!!.load(baseContext, R.raw.rabochiy2, sound_priority_globall)
-        soundId15 = soundPool!!.load(baseContext, R.raw.crash, sound_priority_globall)
-        soundId16 = soundPool!!.load(baseContext, R.raw.hihatclosed1, sound_priority_globall)
-        soundId17 = soundPool!!.load(baseContext, R.raw.hihatopened1, sound_priority_globall)
-        soundId18 = soundPool!!.load(baseContext, R.raw.bochka, sound_priority_globall)
-
+        soundId1 = soundPool!!.load(baseContext, R.raw.one, soundPriorityGlobal)
+        soundId2 = soundPool!!.load(baseContext, R.raw.two, soundPriorityGlobal)
+        soundId3 = soundPool!!.load(baseContext, R.raw.three, soundPriorityGlobal)
+        soundId4 = soundPool!!.load(baseContext, R.raw.four, soundPriorityGlobal)
+        soundId5 = soundPool!!.load(baseContext, R.raw.five, soundPriorityGlobal)
+        soundId6 = soundPool!!.load(baseContext, R.raw.six, soundPriorityGlobal)
+        soundId7 = soundPool!!.load(baseContext, R.raw.seven, soundPriorityGlobal)
+        soundId8 = soundPool!!.load(baseContext, R.raw.eight, soundPriorityGlobal)
+        soundId9 = soundPool!!.load(baseContext, R.raw.nine, soundPriorityGlobal)
+        soundId10 = soundPool!!.load(baseContext, R.raw.ten, soundPriorityGlobal)
+        soundId11 = soundPool!!.load(baseContext, R.raw.eleven, soundPriorityGlobal)
+        soundId12 = soundPool!!.load(baseContext, R.raw.twelve, soundPriorityGlobal)
+        soundId13 = soundPool!!.load(baseContext, R.raw.rabochiy, soundPriorityGlobal)
+        soundId14 = soundPool!!.load(baseContext, R.raw.rabochiy2, soundPriorityGlobal)
+        soundId15 = soundPool!!.load(baseContext, R.raw.crash, soundPriorityGlobal)
+        soundId16 = soundPool!!.load(baseContext, R.raw.hihatclosed1, soundPriorityGlobal)
+        soundId17 = soundPool!!.load(baseContext, R.raw.hihatopened1, soundPriorityGlobal)
+        soundId18 = soundPool!!.load(baseContext, R.raw.bochka, soundPriorityGlobal)
 
 //        findViewById<ImageView>(R.id.iv_one).setOnClickListener { MainScope().launch { playSound(1) } }
 //        findViewById<ImageView>(R.id.iv_two).setOnClickListener { MainScope().launch { playSound(2) } }
 //        findViewById<ImageView>(R.id.iv_three).setOnClickListener { MainScope().launch { playSound(3) } }
 
-
-
         findViewById<ImageView>(R.id.iv_four).setOnClickListener { MainScope().launch { playSound(18) } }
         findViewById<ImageView>(R.id.iv_five).setOnClickListener { MainScope().launch { playSound(16) } }
         findViewById<ImageView>(R.id.iv_six).setOnClickListener { MainScope().launch { playSound(13) } }
+
+        iv_do.setOnClickListener { MainScope().launch { playSound(1) } }
+        iv_re.setOnClickListener { MainScope().launch { playSound(2) } }
+        iv_mi.setOnClickListener { MainScope().launch { playSound(3) } }
+        iv_fa.setOnClickListener { MainScope().launch { playSound(4) } }
+        iv_sol.setOnClickListener { MainScope().launch { playSound(5) } }
+        iv_la.setOnClickListener { MainScope().launch { playSound(6) } }
+        iv_si.setOnClickListener { MainScope().launch { playSound(7) } }
 
 
 
@@ -109,7 +114,6 @@ class Manul_Obmanul : AppCompatActivity() {
                 var Rotate_XY = Random.nextBoolean()
                 var Rotate_Direction = arrayListOf<Int>(-1, 1).random()
 
-
                 //Constant Block
                 var Rotation_Time: Long = 1
                 var begin_rotation_cycle1 = 0
@@ -117,32 +121,22 @@ class Manul_Obmanul : AppCompatActivity() {
                 var begin_rotation_cycle2 = 90
                 var end_rotation_cycle2 = 179
 
-
-
-
                 for (i in 1..4) {
-
-
                     RandomNumber = Random.nextInt(1..6)
                     Rotate_XY = Random.nextBoolean()
                     Rotate_Direction = arrayListOf<Int>(-1, 1).random()
-
-
 
                     if (Rotate_XY) {
                         for (i in begin_rotation_cycle1..end_rotation_cycle1) {
                             it.rotationX = it.rotationX + Rotate_Direction
                             delay(Rotation_Time)
-
                         }
                     } else {
                         for (i in begin_rotation_cycle1..end_rotation_cycle1) {
                             it.rotationY = it.rotationY + Rotate_Direction
                             delay(Rotation_Time)
-
                         }
                     }
-
                     findViewById<ImageView>(R.id.manul_one).setImageResource(
                         when (RandomNumber) {
                             1 -> R.drawable.one
@@ -154,7 +148,6 @@ class Manul_Obmanul : AppCompatActivity() {
                             else -> R.drawable.ic_launcher_foreground
                         }
                     )
-
                     if (Rotate_XY) {
                         for (i in begin_rotation_cycle2..end_rotation_cycle2) {
                             it.rotationX = it.rotationX + Rotate_Direction
@@ -166,8 +159,6 @@ class Manul_Obmanul : AppCompatActivity() {
                             delay(Rotation_Time)
                         }
                     }
-
-
                 }
             }
         }
@@ -182,5 +173,4 @@ class Manul_Obmanul : AppCompatActivity() {
     fun playSound13(view: View) {
         soundPool?.play(soundId13, 1F, 1F, 0, 0, 1F)
     }
-
 }
