@@ -33,59 +33,59 @@ class Manul_Obmanul : AppCompatActivity() {
     private var soundId16 = 0
     private var soundId17 = 0
     private var soundId18 = 0
+    private var left_volume = 1F
+    private var right_volume = 1F
+    private var sound_priority_globall = 1
 
     fun playSound(sound: Int) {
-        var soundId = 0
+        var soundIdBuffer = 0
         when (sound) {
-            1 -> soundId = soundId1
-            2 -> soundId = soundId2
-            3 -> soundId = soundId3
-            4 -> soundId = soundId4
-            5 -> soundId = soundId5
-            6 -> soundId = soundId6
-            7 -> soundId = soundId7
-            8 -> soundId = soundId8
-            9 -> soundId = soundId9
-            10 -> soundId = soundId10
-            11 -> soundId = soundId11
-            12 -> soundId = soundId12
-
-            13 -> soundId = soundId13 //raboch
-            14 -> soundId = soundId14//raboch
-            15 -> soundId = soundId15//crash
-            16 -> soundId = soundId16//closedh
-            17 -> soundId = soundId17//openh
-            18 -> soundId = soundId18//bochka
+            1 -> soundIdBuffer = soundId1
+            2 -> soundIdBuffer = soundId2
+            3 -> soundIdBuffer = soundId3
+            4 -> soundIdBuffer = soundId4
+            5 -> soundIdBuffer = soundId5
+            6 -> soundIdBuffer = soundId6
+            7 -> soundIdBuffer = soundId7
+            8 -> soundIdBuffer = soundId8
+            9 -> soundIdBuffer = soundId9
+            10 -> soundIdBuffer = soundId10
+            11 -> soundIdBuffer = soundId11
+            12 -> soundIdBuffer = soundId12
+            13 -> soundIdBuffer = soundId13 //raboch
+            14 -> soundIdBuffer = soundId14//raboch
+            15 -> soundIdBuffer = soundId15//crash
+            16 -> soundIdBuffer = soundId16//closedh
+            17 -> soundIdBuffer = soundId17//openh
+            18 -> soundIdBuffer = soundId18//bochka
         }
-        soundPool?.play(soundId, 1F, 1F, 0, 0, 1F)
+        soundPool?.play(soundIdBuffer, left_volume, right_volume, 0, 0, 1F)
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         soundPool = SoundPool(25, AudioManager.STREAM_MUSIC, 0)
-        soundId1 = soundPool!!.load(baseContext, R.raw.one, 1)
-        soundId2 = soundPool!!.load(baseContext, R.raw.two, 1)
-        soundId3 = soundPool!!.load(baseContext, R.raw.three, 1)
-        soundId4 = soundPool!!.load(baseContext, R.raw.four, 1)
-        soundId5 = soundPool!!.load(baseContext, R.raw.five, 1)
-        soundId6 = soundPool!!.load(baseContext, R.raw.six, 1)
-        soundId7 = soundPool!!.load(baseContext, R.raw.seven, 1)
-        soundId8 = soundPool!!.load(baseContext, R.raw.eight, 1)
-        soundId9 = soundPool!!.load(baseContext, R.raw.nine, 1)
-        soundId10 = soundPool!!.load(baseContext, R.raw.ten, 1)
-        soundId11 = soundPool!!.load(baseContext, R.raw.eleven, 1)
-        soundId12 = soundPool!!.load(baseContext, R.raw.twelve, 1)
+        soundId1 = soundPool!!.load(baseContext, R.raw.one, sound_priority_globall)
+        soundId2 = soundPool!!.load(baseContext, R.raw.two, sound_priority_globall)
+        soundId3 = soundPool!!.load(baseContext, R.raw.three, sound_priority_globall)
+        soundId4 = soundPool!!.load(baseContext, R.raw.four, sound_priority_globall)
+        soundId5 = soundPool!!.load(baseContext, R.raw.five, sound_priority_globall)
+        soundId6 = soundPool!!.load(baseContext, R.raw.six, sound_priority_globall)
+        soundId7 = soundPool!!.load(baseContext, R.raw.seven, sound_priority_globall)
+        soundId8 = soundPool!!.load(baseContext, R.raw.eight, sound_priority_globall)
+        soundId9 = soundPool!!.load(baseContext, R.raw.nine, sound_priority_globall)
+        soundId10 = soundPool!!.load(baseContext, R.raw.ten, sound_priority_globall)
+        soundId11 = soundPool!!.load(baseContext, R.raw.eleven, sound_priority_globall)
+        soundId12 = soundPool!!.load(baseContext, R.raw.twelve, sound_priority_globall)
 
-        soundId13 = soundPool!!.load(baseContext, R.raw.rabochiy, 1)
-        soundId14 = soundPool!!.load(baseContext, R.raw.rabochiy2, 1)
-        soundId15 = soundPool!!.load(baseContext, R.raw.crash, 1)
-        soundId16 = soundPool!!.load(baseContext, R.raw.hihatclosed1, 1)
-        soundId17 = soundPool!!.load(baseContext, R.raw.hihatopened1, 1)
-        soundId18 = soundPool!!.load(baseContext, R.raw.bochka, 1)
+        soundId13 = soundPool!!.load(baseContext, R.raw.rabochiy, sound_priority_globall)
+        soundId14 = soundPool!!.load(baseContext, R.raw.rabochiy2, sound_priority_globall)
+        soundId15 = soundPool!!.load(baseContext, R.raw.crash, sound_priority_globall)
+        soundId16 = soundPool!!.load(baseContext, R.raw.hihatclosed1, sound_priority_globall)
+        soundId17 = soundPool!!.load(baseContext, R.raw.hihatopened1, sound_priority_globall)
+        soundId18 = soundPool!!.load(baseContext, R.raw.bochka, sound_priority_globall)
 
 
 //        findViewById<ImageView>(R.id.iv_one).setOnClickListener { MainScope().launch { playSound(1) } }
