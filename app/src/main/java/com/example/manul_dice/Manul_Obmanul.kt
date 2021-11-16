@@ -68,7 +68,7 @@ class Manul_Obmanul : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         soundPool = SoundPool(25, AudioManager.STREAM_MUSIC, 0)
-        soundId1 = soundPool!!.load(baseContext, R.raw.one, soundPriorityGlobal)
+        soundId1 = soundPool!!.load(baseContext, R.raw.oneq, soundPriorityGlobal)
         soundId2 = soundPool!!.load(baseContext, R.raw.two, soundPriorityGlobal)
         soundId3 = soundPool!!.load(baseContext, R.raw.three, soundPriorityGlobal)
         soundId4 = soundPool!!.load(baseContext, R.raw.four, soundPriorityGlobal)
@@ -165,12 +165,12 @@ class Manul_Obmanul : AppCompatActivity() {
     }
 
     fun playSound18(view: View) {
-        soundPool?.play(soundId18, 1F, 1F, 0, 0, 1F)
+        soundPool?.play(soundId18, leftVolume, rightVolume, 0, 0, 1F)
     }
     fun playSound16(view: View) {
-        soundPool?.play(soundId16, 1F, 1F, 0, 0, 1F)
+        soundPool?.play(soundId16, leftVolume, rightVolume, 0, 0, 1F)
     }
     fun playSound13(view: View) {
-        soundPool?.play(soundId13, 1F, 1F, 0, 0, 1F)
+        soundPool?.play(soundId13, leftVolume, rightVolume, 0, 0, 1F)
     }
 }
